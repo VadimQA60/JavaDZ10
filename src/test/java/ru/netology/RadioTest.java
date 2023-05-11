@@ -3,7 +3,20 @@ package ru.netology;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 public class RadioTest {
+    @Test
+    public void radioStationTest() {
+
+        Radio radio1 = new Radio(10);
+        Assertions.assertEquals(10, radio1.getInTotalStation());
+
+        Radio radio2 = new Radio(11);
+        Assertions.assertEquals(11, radio2.getInTotalStation());
+
+
+    }
+
     @Test
     public void setRadioStationTest() {
         Radio radio = new Radio();
@@ -141,4 +154,11 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void minMaxTestStation() {
+        Radio radio = new Radio(0,9);
+        Assertions.assertEquals(0, radio.getMinRadioStation());
+        Assertions.assertEquals(9, radio.getMaxRadioStation());
+    }
+
 }
